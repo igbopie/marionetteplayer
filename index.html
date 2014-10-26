@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Marionette Player</title>
+
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" />
+
+        <script src="bower_components/jquery/dist/jquery.min.js" ></script>
+        <script src="bower_components/underscore/underscore.js" ></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" ></script>
+        <script src="bower_components/backbone/backbone.js" ></script>
+        <script src="bower_components/marionette/lib/backbone.marionette.min.js" ></script>
+        <script src="application.js" ></script>
+    </head>
+    <body>
+        <div id="content">
+        </div>
+
+
+        <!-- TEMPLATES -->
+        <script type="text/template" id="songs-template">
+            <thead>
+                <tr class='header'>
+                    <th>Title</th>
+                    <th>Length</th>
+                    <th>Votes</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </script>
+
+        <script type="text/template" id="song-template">
+            <td><%= title %></td>
+            <td><%= length %></td>
+            <td><%= votes %></td>
+            <td><span class="vote-song">Vote</span></td>
+        </script>
+
+    </body>
+</html>

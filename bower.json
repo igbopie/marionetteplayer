@@ -1,0 +1,23 @@
+{
+  "name": "marionetteplayer",
+  "version": "0.0.0",
+  "authors": [
+    "Ignacio Bona <igbopie@gmail.com>"
+  ],
+  "description": "Learning marionette",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marionette": "~2.2.2",
+    "bootstrap": "~3.2.0",
+    "fontawesome": "~4.2.0"
+  }
+}
