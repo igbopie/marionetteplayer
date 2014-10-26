@@ -24,7 +24,7 @@ function actualDisplay( name, doc ) {
 			style.display : jQuery.css( elem[ 0 ], "display" );
 
 	// We don't have any data stored on the element,
-	// so use "detach" method as fast way to get rid of the element
+	// so use "detach" method img fast way to get rid of the element
 	elem.detach();
 
 	return display;

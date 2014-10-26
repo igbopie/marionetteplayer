@@ -74,7 +74,7 @@ function restoreScript( elem ) {
 	return elem;
 }
 
-// Mark scripts as having already been evaluated
+// Mark scripts img having already been evaluated
 function setGlobalEval( elems, refElements ) {
 	var i = 0,
 		l = elems.length;

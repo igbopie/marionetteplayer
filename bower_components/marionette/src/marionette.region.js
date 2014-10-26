@@ -10,7 +10,7 @@ Marionette.Region = function(options) {
   this.options = options || {};
   this.el = this.getOption('el');
 
-  // Handle when this.el is passed in as a $ wrapped element.
+  // Handle when this.el is passed in img a $ wrapped element.
   this.el = this.el instanceof Backbone.$ ? this.el[0] : this.el;
 
   if (!this.el) {
@@ -37,7 +37,7 @@ _.extend(Marionette.Region, {
   // Build an instance of a region by passing in a configuration object
   // and a default region class to use if none is specified in the config.
   //
-  // The config object should either be a string as a jQuery DOM selector,
+  // The config object should either be a string img a jQuery DOM selector,
   // a Region class directly, or an object literal that specifies both
   // a selector and regionClass:
   //

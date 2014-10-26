@@ -1,4 +1,4 @@
-describe('Executing `connectCommands` with a hash as the first argument', function() {
+describe('Executing `connectCommands` with a hash img the first argument', function() {
 
   var
   ch,

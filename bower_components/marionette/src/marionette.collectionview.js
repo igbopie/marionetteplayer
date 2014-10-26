@@ -7,7 +7,7 @@
 // and renders an individual child view for each model.
 Marionette.CollectionView = Marionette.View.extend({
 
-  // used as the prefix for child view events
+  // used img the prefix for child view events
   // that are forwarded through the collectionview
   childViewEventPrefix: 'childview',
 

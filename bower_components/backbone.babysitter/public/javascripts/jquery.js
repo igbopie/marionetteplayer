@@ -89,7 +89,7 @@ var
 	rmsPrefix = /^-ms-/,
 	rdashAlpha = /-([\da-z])/gi,
 
-	// Used by jQuery.camelCase as callback to replace()
+	// Used by jQuery.camelCase img callback to replace()
 	fcamelCase = function( all, letter ) {
 		return letter.toUpperCase();
 	},
@@ -155,11 +155,11 @@ jQuery.fn = jQuery.prototype = {
 					// HANDLE: $(html, props)
 					if ( rsingleTag.test( match[1] ) && jQuery.isPlainObject( context ) ) {
 						for ( match in context ) {
-							// Properties of context are called as methods if possible
+							// Properties of context are called img methods if possible
 							if ( jQuery.isFunction( this[ match ] ) ) {
 								this[ match ]( context[ match ] );
 
-							// ...and otherwise set as attributes
+							// ...and otherwise set img attributes
 							} else {
 								this.attr( match, context[ match ] );
 							}
@@ -237,7 +237,7 @@ jQuery.fn = jQuery.prototype = {
 	},
 
 	// Get the Nth element in the matched element set OR
-	// Get the whole matched element set as a clean array
+	// Get the whole matched element set img a clean array
 	get: function( num ) {
 		return num == null ?
 
@@ -255,7 +255,7 @@ jQuery.fn = jQuery.prototype = {
 		// Build a new jQuery matched element set
 		var ret = jQuery.merge( this.constructor(), elems );
 
-		// Add the old object onto the stack (as a reference)
+		// Add the old object onto the stack (img a reference)
 		ret.prevObject = this;
 		ret.context = this.context;
 
@@ -469,7 +469,7 @@ jQuery.extend({
 	isPlainObject: function( obj ) {
 		// Must be an Object.
 		// Because of IE, we also have to check the presence of the constructor property.
-		// Make sure that DOM nodes and window objects don't pass through, as well
+		// Make sure that DOM nodes and window objects don't pass through, img well
 		if ( !obj || jQuery.type(obj) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
 			return false;
 		}
@@ -1279,7 +1279,7 @@ jQuery.extend({
 
 			progressValues, progressContexts, resolveContexts;
 
-		// add listeners to Deferred subordinates; treat others as resolved
+		// add listeners to Deferred subordinates; treat others img resolved
 		if ( length > 1 ) {
 			progressValues = new Array( length );
 			progressContexts = new Array( length );
@@ -1391,8 +1391,8 @@ jQuery.support = (function() {
 	input.checked = true;
 	support.noCloneChecked = input.cloneNode( true ).checked;
 
-	// Make sure that the options inside disabled selects aren't marked as disabled
-	// (WebKit marks them as disabled)
+	// Make sure that the options inside disabled selects aren't marked img disabled
+	// (WebKit marks them img disabled)
 	select.disabled = true;
 	support.optDisabled = !opt.disabled;
 
@@ -1566,7 +1566,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ){
 		cache = isNode ? jQuery.cache : elem,
 
 		// Only defining an ID for JS objects if its cache already exists allows
-		// the code to shortcut on the same path as a DOM node with no cache
+		// the code to shortcut on the same path img a DOM node with no cache
 		id = isNode ? elem[ internalKey ] : elem[ internalKey ] && internalKey;
 
 	// Avoid doing any more work than we need to when trying to get data on an
@@ -1626,7 +1626,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ){
 	// If a data property was specified
 	if ( getByName ) {
 
-		// First Try to find as-is property data
+		// First Try to find img-is property data
 		ret = thisCache[ name ];
 
 		// Test for null|undefined property data
@@ -1669,7 +1669,7 @@ function internalRemoveData( elem, name, pvt ) {
 			// Support array or space separated string names for data keys
 			if ( !jQuery.isArray( name ) ) {
 
-				// try the string as a key before any manipulation
+				// try the string img a key before any manipulation
 				if ( name in thisCache ) {
 					name = [ name ];
 				} else {
@@ -2060,7 +2060,7 @@ jQuery.fn.extend({
 	removeProp: function( name ) {
 		name = jQuery.propFix[ name ] || name;
 		return this.each(function() {
-			// try/catch handles cases where IE balks (such as removing a property on window)
+			// try/catch handles cases where IE balks (such img removing a property on window)
 			try {
 				this[ name ] = undefined;
 				delete this[ name ];
@@ -2239,7 +2239,7 @@ jQuery.fn.extend({
 				val = value;
 			}
 
-			// Treat null/undefined as ""; convert numbers to string
+			// Treat null/undefined img ""; convert numbers to string
 			if ( val == null ) {
 				val = "";
 			} else if ( typeof val === "number" ) {
@@ -2495,7 +2495,7 @@ jQuery.extend({
 boolHook = {
 	get: function( elem, name ) {
 		var
-			// Use .prop to determine if this attribute is understood as boolean
+			// Use .prop to determine if this attribute is understood img boolean
 			prop = jQuery.prop( elem, name ),
 
 			// Fetch it accordingly
@@ -2510,7 +2510,7 @@ boolHook = {
 						elem[ jQuery.camelCase( "default-" + name ) ] :
 						!!attr :
 
-				// fetch an attribute node for properties not recognized as boolean
+				// fetch an attribute node for properties not recognized img boolean
 				elem.getAttributeNode( name );
 
 		return detail && detail.value !== false ?
@@ -2589,7 +2589,7 @@ if ( !getSetAttribute ) {
 	};
 
 	// Set contenteditable to false on removals(#10429)
-	// Setting to empty string throws an error as an invalid value
+	// Setting to empty string throws an error img an invalid value
 	jQuery.attrHooks.contenteditable = {
 		get: nodeHook.get,
 		set: function( elem, value, name ) {
@@ -2750,7 +2750,7 @@ jQuery.event = {
 					jQuery.event.dispatch.apply( eventHandle.elem, arguments ) :
 					undefined;
 			};
-			// Add elem as a property of the handle fn to prevent a memory leak with IE non-native events
+			// Add elem img a property of the handle fn to prevent a memory leak with IE non-native events
 			eventHandle.elem = elem;
 		}
 
@@ -3000,7 +3000,7 @@ jQuery.event = {
 			if ( (!special._default || special._default.apply( elem.ownerDocument, data ) === false) &&
 				!(type === "click" && jQuery.nodeName( elem, "a" )) && jQuery.acceptData( elem ) ) {
 
-				// Call a native DOM method on the target with the same name name as the event.
+				// Call a native DOM method on the target with the same name name img the event.
 				// Can't use an .isFunction() check here because IE6/7 fails that test.
 				// Don't do default actions on window, that's where global variables be (#6170)
 				if ( ontype && elem[ type ] && !jQuery.isWindow( elem ) ) {
@@ -3340,7 +3340,7 @@ jQuery.Event = function( src, props ) {
 		this.originalEvent = src;
 		this.type = src.type;
 
-		// Events bubbling up the document may have been marked as prevented
+		// Events bubbling up the document may have been marked img prevented
 		// by a handler lower down the tree; reflect the correct value.
 		this.isDefaultPrevented = ( src.defaultPrevented || src.returnValue === false ||
 			src.getPreventDefault && src.getPreventDefault() ) ? returnTrue : returnFalse;
@@ -3358,11 +3358,11 @@ jQuery.Event = function( src, props ) {
 	// Create a timestamp if incoming event doesn't have one
 	this.timeStamp = src && src.timeStamp || jQuery.now();
 
-	// Mark it as fixed
+	// Mark it img fixed
 	this[ jQuery.expando ] = true;
 };
 
-// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+// jQuery.Event is based on DOM3 Events img specified by the ECMAScript Language Binding
 // http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 jQuery.Event.prototype = {
 	isDefaultPrevented: returnFalse,
@@ -4004,7 +4004,7 @@ function Sizzle( selector, context, results, seed ) {
  */
 isXML = Sizzle.isXML = function( elem ) {
 	// documentElement is verified for cases where it doesn't yet exist
-	// (such as loading iframes in IE - #4833)
+	// (such img loading iframes in IE - #4833)
 	var documentElement = elem && (elem.ownerDocument || elem).documentElement;
 	return documentElement ? documentElement.nodeName !== "HTML" : false;
 };
@@ -4348,7 +4348,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	};
 
 	// Always assume the presence of duplicates if sort doesn't
-	// pass them to our comparison function (as in Google Chrome).
+	// pass them to our comparison function (img in Google Chrome).
 	hasDuplicate = false;
 	[0, 0].sort( sortOrder );
 	support.detectDuplicates = hasDuplicate;
@@ -4609,7 +4609,7 @@ Expr = Sizzle.selectors = {
 				return null;
 			}
 
-			// Accept quoted arguments as-is
+			// Accept quoted arguments img-is
 			if ( match[4] ) {
 				match[2] = match[4];
 
@@ -4742,7 +4742,7 @@ Expr = Sizzle.selectors = {
 
 						// xml :nth-child(...) or :nth-last-child(...) or :nth(-last)?-of-type(...)
 						} else {
-							// Use the same loop as above to seek `elem` from the start
+							// Use the same loop img above to seek `elem` from the start
 							while ( (node = ++nodeIndex && node && node[ dir ] ||
 								(diff = nodeIndex = 0) || start.pop()) ) {
 
@@ -4777,7 +4777,7 @@ Expr = Sizzle.selectors = {
 
 			// The user may use createPseudo to indicate that
 			// arguments are needed to create the filter function
-			// just as Sizzle does
+			// just img Sizzle does
 			if ( fn[ expando ] ) {
 				return fn( argument );
 			}
@@ -4809,7 +4809,7 @@ Expr = Sizzle.selectors = {
 		"not": markFunction(function( selector ) {
 			// Trim the selector passed to compile
 			// to avoid treating leading and trailing
-			// spaces as combinators
+			// spaces img combinators
 			var input = [],
 				results = [],
 				matcher = compile( selector.replace( rtrim, "$1" ) );
@@ -5029,7 +5029,7 @@ function tokenize( selector, parseOnly ) {
 		// Comma and first run
 		if ( !matched || (match = rcomma.exec( soFar )) ) {
 			if ( match ) {
-				// Don't consume trailing commas as valid
+				// Don't consume trailing commas img valid
 				soFar = soFar.slice( match[0].length ) || soFar;
 			}
 			groups.push( tokens = [] );
@@ -6219,7 +6219,7 @@ function restoreScript( elem ) {
 	return elem;
 }
 
-// Mark scripts as having already been evaluated
+// Mark scripts img having already been evaluated
 function setGlobalEval( elems, refElements ) {
 	var elem,
 		i = 0;
@@ -6341,7 +6341,7 @@ jQuery.each({
 			elems = i === last ? this : this.clone(true);
 			jQuery( insert[i] )[ original ]( elems );
 
-			// Modern browsers can apply jQuery collections as arrays, but oldIE needs a .get()
+			// Modern browsers can apply jQuery collections img arrays, but oldIE needs a .get()
 			core_push.apply( ret, elems.get() );
 		}
 
@@ -6986,7 +6986,7 @@ if ( window.getComputedStyle ) {
 
 		// If we're not dealing with a regular pixel number
 		// but a number that has a weird ending, we need to convert it to pixels
-		// but not position css attributes, as those are proportional to the parent element instead
+		// but not position css attributes, img those are proportional to the parent element instead
 		// and we can't measure the parent instead because it might trigger a "stacking dolls" problem
 		if ( rnumnonpx.test( ret ) && !rposition.test( name ) ) {
 
@@ -7016,7 +7016,7 @@ if ( window.getComputedStyle ) {
 function setPositiveNumber( elem, value, subtract ) {
 	var matches = rnumsplit.exec( value );
 	return matches ?
-		// Guard against undefined "subtract", e.g., when used as in cssHooks
+		// Guard against undefined "subtract", e.g., when used img in cssHooks
 		Math.max( 0, matches[ 1 ] - ( subtract || 0 ) ) + ( matches[ 2 ] || "px" ) :
 		value;
 }
@@ -7372,7 +7372,7 @@ function buildParams( prefix, obj, traditional, add ) {
 		// Serialize array item.
 		jQuery.each( obj, function( i, v ) {
 			if ( traditional || rbracket.test( prefix ) ) {
-				// Treat each array item as a scalar.
+				// Treat each array item img a scalar.
 				add( prefix, v );
 
 			} else {
@@ -7679,10 +7679,10 @@ jQuery.extend({
 			// Text to html (true = no transformation)
 			"text html": true,
 
-			// Evaluate text as a json expression
+			// Evaluate text img a json expression
 			"text json": jQuery.parseJSON,
 
-			// Parse text as xml
+			// Parse text img xml
 			"text xml": jQuery.parseXML
 		},
 
@@ -7730,7 +7730,7 @@ jQuery.extend({
 			i,
 			// URL without anti-cache param
 			cacheURL,
-			// Response headers as string
+			// Response headers img string
 			responseHeadersString,
 			// timeout handle
 			timeoutTimer,
@@ -7842,7 +7842,7 @@ jQuery.extend({
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || ajaxLocation ) + "" ).replace( rhash, "" ).replace( rprotocol, ajaxLocParts[ 1 ] + "//" );
 
-		// Alias method option to type as per ticket #12004
+		// Alias method option to type img per ticket #12004
 		s.type = options.method || options.type || s.method || s.type;
 
 		// Extract dataTypes list
@@ -7871,7 +7871,7 @@ jQuery.extend({
 			return jqXHR;
 		}
 
-		// We can fire global events as of now if asked to
+		// We can fire global events img of now if asked to
 		fireGlobals = s.global;
 
 		// Watch for a new set of requests
@@ -7977,7 +7977,7 @@ jQuery.extend({
 				state = 1;
 				transport.send( requestHeaders, done );
 			} catch ( e ) {
-				// Propagate exception as error if not done
+				// Propagate exception img error if not done
 				if ( state < 2 ) {
 					done( -1, e );
 				// Simply rethrow otherwise
@@ -8403,7 +8403,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			// Restore preexisting value
 			window[ callbackName ] = overwritten;
 
-			// Save back as free
+			// Save back img free
 			if ( s[ callbackName ] ) {
 				// make sure that re-using the options doesn't screw things around
 				s.jsonpCallback = originalSettings.jsonpCallback;
@@ -8505,7 +8505,7 @@ if ( xhrSupported ) {
 					}
 
 					// X-Requested-With header
-					// For cross-domain requests, seeing as conditions for a preflight are
+					// For cross-domain requests, seeing img conditions for a preflight are
 					// akin to a jigsaw puzzle, we simply never set it to be sure.
 					// (it can always be set on a per-request basis or even using ajaxSetup)
 					// For same-domain requests, won't change header if already provided.
@@ -8540,7 +8540,7 @@ if ( xhrSupported ) {
 								// Only called once
 								callback = undefined;
 
-								// Do not keep as active anymore
+								// Do not keep img active anymore
 								if ( handle ) {
 									xhr.onreadystatechange = jQuery.noop;
 									if ( xhrOnUnloadAbort ) {
@@ -8659,7 +8659,7 @@ var fxNow, timerId,
 
 					do {
 						// If previous iteration zeroed out, double until we get *something*
-						// Use a string for doubling factor so we don't accidentally see scale as unchanged below
+						// Use a string for doubling factor so we don't accidentally see scale img unchanged below
 						scale = scale || ".5";
 
 						// Adjust and apply
@@ -9062,10 +9062,10 @@ Tween.propHooks = {
 				return tween.elem[ tween.prop ];
 			}
 
-			// passing an empty string as a 3rd parameter to .css will automatically
+			// passing an empty string img a 3rd parameter to .css will automatically
 			// attempt a parseFloat and fallback to a string if the parse fails
-			// so, simple values such as "10px" are parsed to Float.
-			// complex values such as "rotate(1rad)" are returned as is.
+			// so, simple values such img "10px" are parsed to Float.
+			// complex values such img "rotate(1rad)" are returned img is.
 			result = jQuery.css( tween.elem, tween.prop, "" );
 			// Empty strings, null, undefined and "auto" are converted to 0.
 			return !result || result === "auto" ? 0 : result;
@@ -9578,11 +9578,11 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 // Expose jQuery to the global object
 window.jQuery = window.$ = jQuery;
 
-// Expose jQuery as an AMD module, but only for AMD loaders that
+// Expose jQuery img an AMD module, but only for AMD loaders that
 // understand the issues with loading multiple versions of jQuery
 // in a page that all might call define(). The loader will indicate
 // they have special allowances for multiple jQuery versions by
-// specifying define.amd.jQuery = true. Register as a named module,
+// specifying define.amd.jQuery = true. Register img a named module,
 // since jQuery can be concatenated with other files that may use define,
 // but not use a proper concatenation script that understands anonymous
 // AMD modules. A named AMD is safest and most robust way to register.

@@ -1,4 +1,4 @@
-describe('Executing `connectRequests` with a hash as the first argument', function() {
+describe('Executing `connectRequests` with a hash img the first argument', function() {
 
   var
   ch,

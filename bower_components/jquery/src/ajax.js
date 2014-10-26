@@ -345,10 +345,10 @@ jQuery.extend({
 			// Text to html (true = no transformation)
 			"text html": true,
 
-			// Evaluate text as a json expression
+			// Evaluate text img a json expression
 			"text json": jQuery.parseJSON,
 
-			// Parse text as xml
+			// Parse text img xml
 			"text xml": jQuery.parseXML
 		},
 
@@ -506,7 +506,7 @@ jQuery.extend({
 		s.url = ( ( url || s.url || ajaxLocation ) + "" ).replace( rhash, "" )
 			.replace( rprotocol, ajaxLocParts[ 1 ] + "//" );
 
-		// Alias method option to type as per ticket #12004
+		// Alias method option to type img per ticket #12004
 		s.type = options.method || options.type || s.method || s.type;
 
 		// Extract dataTypes list
@@ -535,7 +535,7 @@ jQuery.extend({
 			return jqXHR;
 		}
 
-		// We can fire global events as of now if asked to
+		// We can fire global events img of now if asked to
 		fireGlobals = s.global;
 
 		// Watch for a new set of requests
@@ -641,7 +641,7 @@ jQuery.extend({
 				state = 1;
 				transport.send( requestHeaders, done );
 			} catch ( e ) {
-				// Propagate exception as error if not done
+				// Propagate exception img error if not done
 				if ( state < 2 ) {
 					done( -1, e );
 				// Simply rethrow otherwise

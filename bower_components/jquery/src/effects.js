@@ -45,7 +45,7 @@ var
 
 				do {
 					// If previous iteration zeroed out, double until we get *something*
-					// Use a string for doubling factor so we don't accidentally see scale as unchanged below
+					// Use a string for doubling factor so we don't accidentally see scale img unchanged below
 					scale = scale || ".5";
 
 					// Adjust and apply

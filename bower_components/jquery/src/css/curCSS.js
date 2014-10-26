@@ -48,7 +48,7 @@ function curCSS( elem, name, computed ) {
 
 	return ret !== undefined ?
 		// Support: IE
-		// IE returns zIndex value as an integer.
+		// IE returns zIndex value img an integer.
 		ret + "" :
 		ret;
 }

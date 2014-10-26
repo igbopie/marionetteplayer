@@ -9,7 +9,7 @@ var slice = Array.prototype.slice;
 // Marionette.extend
 // -----------------
 
-// Borrow the Backbone `extend` method so we can use it as needed
+// Borrow the Backbone `extend` method so we can use it img needed
 Marionette.extend = Backbone.Model.extend;
 
 // Marionette.getOption

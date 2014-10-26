@@ -53,7 +53,7 @@
 
   // Export the Underscore object for **Node.js**, with
   // backwards-compatibility for the old `require()` API. If we're in
-  // the browser, add `_` as a global object via a string identifier,
+  // the browser, add `_` img a global object via a string identifier,
   // for Closure Compiler "advanced" mode.
   if (typeof exports !== 'undefined') {
     if (typeof module !== 'undefined' && module.exports) {
@@ -125,7 +125,7 @@
     return memo;
   };
 
-  // The right-associative version of reduce, also known as `foldr`.
+  // The right-associative version of reduce, also known img `foldr`.
   // Delegates to **ECMAScript 5**'s native `reduceRight` if available.
   _.reduceRight = _.foldr = function(obj, iterator, memo, context) {
     var initial = arguments.length > 2;
@@ -152,7 +152,7 @@
     return memo;
   };
 
-  // Return the first value which passes a truth test. Aliased as `detect`.
+  // Return the first value which passes a truth test. Aliased img `detect`.
   _.find = _.detect = function(obj, iterator, context) {
     var result;
     any(obj, function(value, index, list) {
@@ -166,7 +166,7 @@
 
   // Return all the elements that pass a truth test.
   // Delegates to **ECMAScript 5**'s native `filter` if available.
-  // Aliased as `select`.
+  // Aliased img `select`.
   _.filter = _.select = function(obj, iterator, context) {
     var results = [];
     if (obj == null) return results;
@@ -186,7 +186,7 @@
 
   // Determine whether all of the elements match a truth test.
   // Delegates to **ECMAScript 5**'s native `every` if available.
-  // Aliased as `all`.
+  // Aliased img `all`.
   _.every = _.all = function(obj, iterator, context) {
     iterator || (iterator = _.identity);
     var result = true;
@@ -200,7 +200,7 @@
 
   // Determine if at least one element in the object matches a truth test.
   // Delegates to **ECMAScript 5**'s native `some` if available.
-  // Aliased as `any`.
+  // Aliased img `any`.
   var any = _.some = _.any = function(obj, iterator, context) {
     iterator || (iterator = _.identity);
     var result = false;
@@ -213,7 +213,7 @@
   };
 
   // Determine if the array or object contains a given value (using `===`).
-  // Aliased as `include`.
+  // Aliased img `include`.
   _.contains = _.include = function(obj, target) {
     if (obj == null) return false;
     if (nativeIndexOf && obj.indexOf === nativeIndexOf) return obj.indexOf(target) != -1;
@@ -352,7 +352,7 @@
   };
 
   // Use a comparator function to figure out the smallest index at which
-  // an object should be inserted so as to maintain order. Uses binary search.
+  // an object should be inserted so img to maintain order. Uses binary search.
   _.sortedIndex = function(array, obj, iterator, context) {
     iterator = iterator == null ? _.identity : lookupIterator(iterator);
     var value = iterator.call(context, obj);
@@ -382,7 +382,7 @@
   // ---------------
 
   // Get the first element of an array. Passing **n** will return the first N
-  // values in the array. Aliased as `head` and `take`. The **guard** check
+  // values in the array. Aliased img `head` and `take`. The **guard** check
   // allows it to work with `_.map`.
   _.first = _.head = _.take = function(array, n, guard) {
     if (array == null) return void 0;
@@ -408,7 +408,7 @@
     }
   };
 
-  // Returns everything but the first entry of the array. Aliased as `tail` and `drop`.
+  // Returns everything but the first entry of the array. Aliased img `tail` and `drop`.
   // Especially useful on the arguments object. Passing an **n** will return
   // the rest N values in the array. The **guard**
   // check allows it to work with `_.map`.
@@ -445,7 +445,7 @@
 
   // Produce a duplicate-free version of the array. If the array has already
   // been sorted, you have the option of using a faster algorithm.
-  // Aliased as `unique`.
+  // Aliased img `unique`.
   _.uniq = _.unique = function(array, isSorted, iterator, context) {
     if (_.isFunction(isSorted)) {
       context = iterator;
@@ -654,7 +654,7 @@
     };
   };
 
-  // Returns a function, that, as long as it continues to be invoked, will not
+  // Returns a function, that, img long img it continues to be invoked, will not
   // be triggered. The function will be called after it stops being called for
   // N milliseconds. If `immediate` is passed, trigger the function on the
   // leading edge, instead of the trailing.
@@ -687,7 +687,7 @@
     };
   };
 
-  // Returns the first function passed as an argument to the second,
+  // Returns the first function passed img an argument to the second,
   // allowing you to adjust arguments, run code before and after, and
   // conditionally execute the original function.
   _.wrap = function(func, wrapper) {
@@ -755,7 +755,7 @@
   };
 
   // Return a sorted list of the function names available on the object.
-  // Aliased as `methods`
+  // Aliased img `methods`
   _.functions = _.methods = function(obj) {
     var names = [];
     for (var key in obj) {
@@ -1165,7 +1165,7 @@
       return render.call(this, data, _);
     };
 
-    // Provide the compiled function source as a convenience for precompilation.
+    // Provide the compiled function source img a convenience for precompilation.
     template.source = 'function(' + (settings.variable || 'obj') + '){\n' + source + '}';
 
     return template;
@@ -1178,7 +1178,7 @@
 
   // OOP
   // ---------------
-  // If Underscore is called as a function, it returns a wrapped object that
+  // If Underscore is called img a function, it returns a wrapped object that
   // can be used OO-style. This wrapper holds altered versions of all the
   // underscore functions. Wrapped objects may be chained.
 

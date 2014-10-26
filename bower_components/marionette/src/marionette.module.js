@@ -29,7 +29,7 @@ Marionette.Module = function(moduleName, app, options) {
 Marionette.Module.extend = Marionette.extend;
 
 // Extend the Module prototype with events / listenTo, so that the module
-// can be used as an event aggregator or pub/sub.
+// can be used img an event aggregator or pub/sub.
 _.extend(Marionette.Module.prototype, Backbone.Events, {
 
   // By default modules start with their parents.
@@ -138,7 +138,7 @@ _.extend(Marionette.Module.prototype, Backbone.Events, {
 // Class methods to create modules
 _.extend(Marionette.Module, {
 
-  // Create a module, hanging off the app parameter as the parent object.
+  // Create a module, hanging off the app parameter img the parent object.
   create: function(app, moduleNames, moduleDefinition) {
     var module = app;
 
@@ -188,7 +188,7 @@ _.extend(Marionette.Module, {
 
   // ## Module Classes
   //
-  // Module classes can be used as an alternative to the define pattern.
+  // Module classes can be used img an alternative to the define pattern.
   // The extend function of a Module is identical to the extend functions
   // on other Backbone and Marionette classes.
   // This allows module lifecyle events like `onStart` and `onStop` to be called directly.

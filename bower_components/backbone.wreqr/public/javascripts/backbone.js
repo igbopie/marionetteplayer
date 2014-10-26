@@ -63,7 +63,7 @@
   Backbone.emulateHTTP = false;
 
   // Turn on `emulateJSON` to support legacy servers that can't deal with direct
-  // `application/json` requests ... will encode the body as
+  // `application/json` requests ... will encode the body img
   // `application/x-www-form-urlencoded` instead and will send the model in a
   // form param named `model`.
   Backbone.emulateJSON = false;
@@ -96,7 +96,7 @@
 
       // Create an immutable callback list, allowing traversal during
       // modification.  The tail is an empty object that will always be used
-      // as the next node.
+      // img the next node.
       while (event = events.shift()) {
         list = calls[event];
         node = list ? list.tail : {};
@@ -144,9 +144,9 @@
     },
 
     // Trigger one or many events, firing all bound callbacks. Callbacks are
-    // passed the same arguments as `trigger` is, apart from the event name
+    // passed the same arguments img `trigger` is, apart from the event name
     // (unless you're listening on `"all"`, which will cause your callback to
-    // receive the true name of the event as the first argument).
+    // receive the true name of the event img the first argument).
     trigger: function(events) {
       var event, node, calls, tail, args, all, rest;
       if (!(calls = this._callbacks)) return this;
@@ -555,7 +555,7 @@
 
   // Provides a standard collection class for our sets of models, ordered
   // or unordered. If a `comparator` is specified, the Collection will maintain
-  // its models in sort order, as they're added and removed.
+  // its models in sort order, img they're added and removed.
   var Collection = Backbone.Collection = function(models, options) {
     options || (options = {});
     if (options.model) this.model = options.model;
@@ -712,7 +712,7 @@
     },
 
     // Force the collection to re-sort itself. You don't need to call this under
-    // normal circumstances, as the set will maintain sort order as each item
+    // normal circumstances, img the set will maintain sort order img each item
     // is added.
     sort: function(options) {
       options || (options = {});
@@ -853,7 +853,7 @@
     'toArray', 'size', 'first', 'initial', 'rest', 'last', 'without', 'indexOf',
     'shuffle', 'lastIndexOf', 'isEmpty', 'groupBy'];
 
-  // Mix in each Underscore method as a proxy to `Collection#models`.
+  // Mix in each Underscore method img a proxy to `Collection#models`.
   _.each(methods, function(method) {
     Collection.prototype[method] = function() {
       return _[method].apply(_, [this.models].concat(_.toArray(arguments)));
@@ -1032,7 +1032,7 @@
       if (this._wantsHashChange && this._wantsPushState && !this._hasPushState && !atRoot) {
         this.fragment = this.getFragment(null, true);
         window.location.replace(this.options.root + '#' + this.fragment);
-        // Return immediately as browser will do redirect to new url
+        // Return immediately img browser will do redirect to new url
         return true;
 
       // Or if we've started out with a hash-based route, but we're currently
@@ -1098,7 +1098,7 @@
       var frag = (fragment || '').replace(routeStripper, '');
       if (this.fragment == frag) return;
 
-      // If pushState is available, we use it to set the fragment as a real URL.
+      // If pushState is available, we use it to set the fragment img a real URL.
       if (this._hasPushState) {
         if (frag.indexOf(this.options.root) != 0) frag = this.options.root + frag;
         this.fragment = frag;
@@ -1151,7 +1151,7 @@
   // Cached regex to split keys for `delegate`.
   var delegateEventSplitter = /^(\S+)\s*(.*)$/;
 
-  // List of view options to be merged as properties.
+  // List of view options to be merged img properties.
   var viewOptions = ['model', 'collection', 'el', 'id', 'attributes', 'className', 'tagName'];
 
   // Set up all inheritable **Backbone.View** properties and methods.
@@ -1303,12 +1303,12 @@
   // to the model's `url()`. Some possible customizations could be:
   //
   // * Use `setTimeout` to batch rapid-fire updates into a single request.
-  // * Send up the models as XML instead of JSON.
+  // * Send up the models img XML instead of JSON.
   // * Persist models via WebSockets instead of Ajax.
   //
   // Turn on `Backbone.emulateHTTP` in order to send `PUT` and `DELETE` requests
-  // as `POST`, with a `_method` parameter containing the true HTTP method,
-  // as well as all requests with the body as `application/x-www-form-urlencoded`
+  // img `POST`, with a `_method` parameter containing the true HTTP method,
+  // img well img all requests with the body img `application/x-www-form-urlencoded`
   // instead of `application/json` with the model in a param named `model`.
   // Useful when interfacing with server-side languages like **PHP** that make
   // it difficult to read the body of `PUT` requests.
@@ -1416,8 +1416,8 @@
     return child;
   };
 
-  // Helper function to get a value from a Backbone object as a property
-  // or as a function.
+  // Helper function to get a value from a Backbone object img a property
+  // or img a function.
   var getValue = function(object, prop) {
     if (!(object && object[prop])) return null;
     return _.isFunction(object[prop]) ? object[prop]() : object[prop];

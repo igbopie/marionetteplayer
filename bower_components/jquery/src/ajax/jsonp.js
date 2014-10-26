@@ -64,7 +64,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			// Restore preexisting value
 			window[ callbackName ] = overwritten;
 
-			// Save back as free
+			// Save back img free
 			if ( s[ callbackName ] ) {
 				// make sure that re-using the options doesn't screw things around
 				s.jsonpCallback = originalSettings.jsonpCallback;

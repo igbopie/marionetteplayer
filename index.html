@@ -17,18 +17,53 @@
         <script src="bower_components/backbone/backbone.js" ></script>
         <script src="bower_components/marionette/lib/backbone.marionette.min.js" ></script>
         <script src="application.js" ></script>
+
+
+        <style>
+            .playlist-image{
+                width:50px;
+                height: auto;
+            }
+
+        </style>
     </head>
     <body>
-        <div id="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div id="search" class="col-md-4">
+                    Search
+                </div>
+                <div class="col-md-4"></div>
+
+            </div>
+            <div class="row">
+                <div id="playlists" class="col-md-4">
+                    Playlist
+                </div>
+                <div id="songs" class="col-md-8">
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="player" class="col-md-12">
+                    Player
+                </div>
+            </div>
+
         </div>
 
 
         <!-- TEMPLATES -->
+
+        <!-- SONG -->
         <script type="text/template" id="songs-template">
             <thead>
                 <tr class='header'>
                     <th>Title</th>
                     <th>Length</th>
+                    <th>Artist</th>
+                    <th>Album</th>
                     <th>Votes</th>
                     <th></th>
                 </tr>
@@ -40,8 +75,29 @@
         <script type="text/template" id="song-template">
             <td><%= title %></td>
             <td><%= length %></td>
+            <td><%= artist %></td>
+            <td><%= album %></td>
             <td><%= votes %></td>
             <td><span class="vote-song">Vote</span></td>
+        </script>
+
+
+        <!-- PLAYLIST -->
+
+        <script type="text/template" id="playlists-template">
+            <thead>
+                <tr class='header'>
+                    <th>Image</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </script>
+
+        <script type="text/template" id="playlist-template">
+            <td><image class="playlist-image" src="img/<%= image  %>" /></td>
+            <td><%= name %></td>
         </script>
 
     </body>

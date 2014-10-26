@@ -123,7 +123,7 @@ jQuery.fn.extend({
 			// throw an exception if an attempt to read a data cache is made.
 			if ( elem && value === undefined ) {
 				// Attempt to get data from the cache
-				// with the key as-is
+				// with the key img-is
 				data = data_user.get( elem, key );
 				if ( data !== undefined ) {
 					return data;

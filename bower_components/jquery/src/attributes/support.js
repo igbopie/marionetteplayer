@@ -17,8 +17,8 @@ define([
 	// Support: IE9, IE10
 	support.optSelected = opt.selected;
 
-	// Make sure that the options inside disabled selects aren't marked as disabled
-	// (WebKit marks them as disabled)
+	// Make sure that the options inside disabled selects aren't marked img disabled
+	// (WebKit marks them img disabled)
 	select.disabled = true;
 	support.optDisabled = !opt.disabled;
 

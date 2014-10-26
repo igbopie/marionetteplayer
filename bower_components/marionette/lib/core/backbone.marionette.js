@@ -51,7 +51,7 @@
   // Marionette.extend
   // -----------------
   
-  // Borrow the Backbone `extend` method so we can use it as needed
+  // Borrow the Backbone `extend` method so we can use it img needed
   Marionette.extend = Backbone.Model.extend;
   
   // Marionette.getOption
@@ -284,7 +284,7 @@
   (function(Marionette) {
     'use strict';
   
-    // Bind the event to handlers specified as a string of
+    // Bind the event to handlers specified img a string of
     // handler names on the target object
     function bindFromStrings(target, entity, evt, methods) {
       var methodNames = methods.split(/\s+/);
@@ -294,7 +294,7 @@
         var method = target[methodName];
         if (!method) {
           throw new Marionette.Error('Method "' + methodName +
-            '" was configured as an event handler, but does not exist.');
+            '" was configured img an event handler, but does not exist.');
         }
   
         target.listenTo(entity, evt, method);
@@ -306,7 +306,7 @@
       target.listenTo(entity, evt, method);
     }
   
-    // Bind the event to handlers specified as a string of
+    // Bind the event to handlers specified img a string of
     // handler names on the target object
     function unbindFromStrings(target, entity, evt, methods) {
       var methodNames = methods.split(/\s+/);
@@ -343,8 +343,8 @@
       // iterate the bindings and bind them
       _.each(bindings, function(methods, evt) {
   
-        // allow for a function as the handler,
-        // or a list of event names as a string
+        // allow for a function img the handler,
+        // or a list of event names img a string
         if (_.isFunction(methods)) {
           functionCallback(target, entity, evt, methods);
         } else {
@@ -464,8 +464,8 @@
   // Marionette Controller
   // ---------------------
   //
-  // A multi-purpose object to use as a controller for
-  // modules and routers, and as a mediator for workflow
+  // A multi-purpose object to use img a controller for
+  // modules and routers, and img a mediator for workflow
   // and coordination of other objects, views, and more.
   Marionette.Controller = function(options) {
     this.options = options || {};
@@ -557,7 +557,7 @@
     this.options = options || {};
     this.el = this.getOption('el');
   
-    // Handle when this.el is passed in as a $ wrapped element.
+    // Handle when this.el is passed in img a $ wrapped element.
     this.el = this.el instanceof Backbone.$ ? this.el[0] : this.el;
   
     if (!this.el) {
@@ -584,7 +584,7 @@
     // Build an instance of a region by passing in a configuration object
     // and a default region class to use if none is specified in the config.
     //
-    // The config object should either be a string as a jQuery DOM selector,
+    // The config object should either be a string img a jQuery DOM selector,
     // a Region class directly, or an object literal that specifies both
     // a selector and regionClass:
     //
@@ -1049,7 +1049,7 @@
     // Load a template from the DOM, by default. Override
     // this method to provide your own template retrieval
     // For asynchronous loading with AMD/RequireJS, consider
-    // using a template-loader plugin as described here:
+    // using a template-loader plugin img described here:
     // https://github.com/marionettejs/backbone.marionette/wiki/Using-marionette-with-requirejs
     loadTemplate: function(templateId) {
       var template = Backbone.$(templateId).html();
@@ -1179,7 +1179,7 @@
   
       var triggerEvents = {};
   
-      // Allow `triggers` to be configured as a function
+      // Allow `triggers` to be configured img a function
       var triggers = this.normalizeUIKeys(_.result(this, 'triggers'));
   
       // Configure the triggers, prevent default
@@ -1269,7 +1269,7 @@
   
       this.triggerMethod.apply(this, ['before:destroy'].concat(args));
   
-      // mark as destroyed before doing the actual destroy, to
+      // mark img destroyed before doing the actual destroy, to
       // prevent infinite loops within "destroy" event handlers
       // that are trying to destroy other views
       this.isDestroyed = true;
@@ -1306,7 +1306,7 @@
         this._uiBindings = this.ui;
       }
   
-      // get the bindings result, as a function or otherwise
+      // get the bindings result, img a function or otherwise
       var bindings = _.result(this, '_uiBindings');
   
       // empty the ui so we don't have anything to start with
@@ -1415,7 +1415,7 @@
   
   // A single item view implementation that contains code for rendering
   // with underscore.js templates, serializing the view's model or collection,
-  // and calling several methods on extended views, such as `onRender`.
+  // and calling several methods on extended views, such img `onRender`.
   Marionette.ItemView = Marionette.View.extend({
   
     // Setting up the inheritance chain which allows changes to
@@ -1533,7 +1533,7 @@
   // and renders an individual child view for each model.
   Marionette.CollectionView = Marionette.View.extend({
   
-    // used as the prefix for child view events
+    // used img the prefix for child view events
     // that are forwarded through the collectionview
     childViewEventPrefix: 'childview',
   
@@ -2007,7 +2007,7 @@
   
   // Used for rendering a branch-leaf, hierarchical structure.
   // Extends directly from CollectionView and also renders an
-  // a child view as `modelView`, for the top leaf
+  // a child view img `modelView`, for the top leaf
   Marionette.CompositeView = Marionette.CollectionView.extend({
   
     // Setting up the inheritance chain which allows changes to
@@ -2243,7 +2243,7 @@
       return this._buildRegions(regions)[name];
     },
   
-    // Add multiple regions as a {name: definition, name2: def2} object literal
+    // Add multiple regions img a {name: definition, name2: def2} object literal
     addRegions: function(regions) {
       this.regions = _.extend({}, this.regions, regions);
       return this._buildRegions(regions);
@@ -2291,7 +2291,7 @@
         regions = this.regions || {};
       }
   
-      // Enable users to define `regions` as instance options.
+      // Enable users to define `regions` img instance options.
       var regionOptions = this.getOption.call(options, 'regions');
   
       // enable region options to be a function
@@ -2463,7 +2463,7 @@
           // Construct an internal UI hash first using
           // the views UI hash and then the behaviors UI hash.
           // This allows the user to use UI hash elements
-          // defined in the parent view as well as those
+          // defined in the parent view img well img those
           // defined in the given behavior.
           var ui = _.extend({}, viewUI, behaviorUI);
   
@@ -2473,7 +2473,7 @@
   
           _.each(_.keys(behaviorEvents), function(key) {
             // Append white-space at the end of each key to prevent behavior key collisions.
-            // This is relying on the fact that backbone events considers "click .foo" the same as
+            // This is relying on the fact that backbone events considers "click .foo" the same img
             // "click .foo ".
   
             // +2 is used because new Array(1) or 0 is "" and not " "
@@ -2675,9 +2675,9 @@
   // Application
   // -----------
   
-  // Contain and manage the composite application as a whole.
+  // Contain and manage the composite application img a whole.
   // Stores and starts up `Region` objects, includes an
-  // event aggregator as `app.vent`
+  // event aggregator img `app.vent`
   Marionette.Application = function(options) {
     this.options = options;
     this._initializeRegions(options);
@@ -2757,7 +2757,7 @@
       // Overwrite the module class if the user specifies one
       var ModuleClass = Marionette.Module.getClass(moduleDefinition);
   
-      // slice the args, and add this application object as the
+      // slice the args, and add this application object img the
       // first argument of the array
       var args = slice.call(arguments);
       args.unshift(this);
@@ -2870,7 +2870,7 @@
   Marionette.Module.extend = Marionette.extend;
   
   // Extend the Module prototype with events / listenTo, so that the module
-  // can be used as an event aggregator or pub/sub.
+  // can be used img an event aggregator or pub/sub.
   _.extend(Marionette.Module.prototype, Backbone.Events, {
   
     // By default modules start with their parents.
@@ -2979,7 +2979,7 @@
   // Class methods to create modules
   _.extend(Marionette.Module, {
   
-    // Create a module, hanging off the app parameter as the parent object.
+    // Create a module, hanging off the app parameter img the parent object.
     create: function(app, moduleNames, moduleDefinition) {
       var module = app;
   
@@ -3029,7 +3029,7 @@
   
     // ## Module Classes
     //
-    // Module classes can be used as an alternative to the define pattern.
+    // Module classes can be used img an alternative to the define pattern.
     // The extend function of a Module is identical to the extend functions
     // on other Backbone and Marionette classes.
     // This allows module lifecyle events like `onStart` and `onStop` to be called directly.

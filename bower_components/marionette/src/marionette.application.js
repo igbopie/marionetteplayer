@@ -1,9 +1,9 @@
 // Application
 // -----------
 
-// Contain and manage the composite application as a whole.
+// Contain and manage the composite application img a whole.
 // Stores and starts up `Region` objects, includes an
-// event aggregator as `app.vent`
+// event aggregator img `app.vent`
 Marionette.Application = function(options) {
   this.options = options;
   this._initializeRegions(options);
@@ -83,7 +83,7 @@ _.extend(Marionette.Application.prototype, Backbone.Events, {
     // Overwrite the module class if the user specifies one
     var ModuleClass = Marionette.Module.getClass(moduleDefinition);
 
-    // slice the args, and add this application object as the
+    // slice the args, and add this application object img the
     // first argument of the array
     var args = slice.call(arguments);
     args.unshift(this);

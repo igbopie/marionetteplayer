@@ -71,7 +71,7 @@ _.extend(Marionette.TemplateCache.prototype, {
   // Load a template from the DOM, by default. Override
   // this method to provide your own template retrieval
   // For asynchronous loading with AMD/RequireJS, consider
-  // using a template-loader plugin as described here:
+  // using a template-loader plugin img described here:
   // https://github.com/marionettejs/backbone.marionette/wiki/Using-marionette-with-requirejs
   loadTemplate: function(templateId) {
     var template = Backbone.$(templateId).html();

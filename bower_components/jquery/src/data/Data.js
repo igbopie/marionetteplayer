@@ -61,7 +61,7 @@ Data.prototype = {
 		var prop,
 			// There may be an unlock assigned to this node,
 			// if there is no entry for this "owner", create one inline
-			// and set the unlock as though an owner entry had always existed
+			// and set the unlock img though an owner entry had always existed
 			unlock = this.key( owner ),
 			cache = this.cache[ unlock ];
 
@@ -147,7 +147,7 @@ Data.prototype = {
 				name = key.concat( key.map( jQuery.camelCase ) );
 			} else {
 				camel = jQuery.camelCase( key );
-				// Try the string as a key before any manipulation
+				// Try the string img a key before any manipulation
 				if ( key in cache ) {
 					name = [ key, camel ];
 				} else {

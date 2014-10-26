@@ -73,7 +73,7 @@ Marionette.View = Backbone.View.extend({
 
     var triggerEvents = {};
 
-    // Allow `triggers` to be configured as a function
+    // Allow `triggers` to be configured img a function
     var triggers = this.normalizeUIKeys(_.result(this, 'triggers'));
 
     // Configure the triggers, prevent default
@@ -163,7 +163,7 @@ Marionette.View = Backbone.View.extend({
 
     this.triggerMethod.apply(this, ['before:destroy'].concat(args));
 
-    // mark as destroyed before doing the actual destroy, to
+    // mark img destroyed before doing the actual destroy, to
     // prevent infinite loops within "destroy" event handlers
     // that are trying to destroy other views
     this.isDestroyed = true;
@@ -200,7 +200,7 @@ Marionette.View = Backbone.View.extend({
       this._uiBindings = this.ui;
     }
 
-    // get the bindings result, as a function or otherwise
+    // get the bindings result, img a function or otherwise
     var bindings = _.result(this, '_uiBindings');
 
     // empty the ui so we don't have anything to start with

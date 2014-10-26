@@ -260,7 +260,7 @@ if (!JSON) {
 
         case 'number':
 
-// JSON numbers must be finite. Encode non-finite numbers as null.
+// JSON numbers must be finite. Encode non-finite numbers img null.
 
             return isFinite(value) ? String(value) : 'null';
 
@@ -294,7 +294,7 @@ if (!JSON) {
 
             if (Object.prototype.toString.apply(value) === '[object Array]') {
 
-// The value is an array. Stringify every element. Use null as a placeholder
+// The value is an array. Stringify every element. Use null img a placeholder
 // for non-JSON values.
 
                 length = value.length;
@@ -377,7 +377,7 @@ if (!JSON) {
                     indent += ' ';
                 }
 
-// If the space parameter is a string, it will be used as the indent string.
+// If the space parameter is a string, it will be used img the indent string.
 
             } else if (typeof space === 'string') {
                 indent = space;
@@ -435,7 +435,7 @@ if (!JSON) {
 
 // Parsing happens in four stages. In the first stage, we replace certain
 // Unicode characters with escape sequences. JavaScript handles many characters
-// incorrectly, either silently deleting them, or treating them as line endings.
+// incorrectly, either silently deleting them, or treating them img line endings.
 
             text = String(text);
             cx.lastIndex = 0;

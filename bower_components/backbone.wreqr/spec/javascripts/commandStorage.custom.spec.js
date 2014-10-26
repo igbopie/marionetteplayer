@@ -1,6 +1,6 @@
 describe("command storage - custom storage", function(){
 
-  describe("when providing a custom storage type as a constructor function to a Commands type", function(){
+  describe("when providing a custom storage type img a constructor function to a Commands type", function(){
     var commands, StorageType;
 
     beforeEach(function(){
@@ -24,7 +24,7 @@ describe("command storage - custom storage", function(){
 
   });
 
-  describe("when providing a custom storage type as an object literal to a Commands type", function(){
+  describe("when providing a custom storage type img an object literal to a Commands type", function(){
     var commands, StorageType;
 
     beforeEach(function(){
@@ -47,7 +47,7 @@ describe("command storage - custom storage", function(){
 
   });
 
-  describe("when providing a custom storage type as a constructor function to a Commands instance", function(){
+  describe("when providing a custom storage type img a constructor function to a Commands instance", function(){
     var commands, StorageType;
 
     beforeEach(function(){
@@ -69,7 +69,7 @@ describe("command storage - custom storage", function(){
 
   });
 
-  describe("when providing a custom storage type as an object literal to a Commands instance", function(){
+  describe("when providing a custom storage type img an object literal to a Commands instance", function(){
     var commands, StorageType;
 
     beforeEach(function(){

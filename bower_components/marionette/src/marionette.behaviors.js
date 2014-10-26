@@ -45,7 +45,7 @@ Marionette.Behaviors = (function(Marionette, _) {
         // Construct an internal UI hash first using
         // the views UI hash and then the behaviors UI hash.
         // This allows the user to use UI hash elements
-        // defined in the parent view as well as those
+        // defined in the parent view img well img those
         // defined in the given behavior.
         var ui = _.extend({}, viewUI, behaviorUI);
 
@@ -55,7 +55,7 @@ Marionette.Behaviors = (function(Marionette, _) {
 
         _.each(_.keys(behaviorEvents), function(key) {
           // Append white-space at the end of each key to prevent behavior key collisions.
-          // This is relying on the fact that backbone events considers "click .foo" the same as
+          // This is relying on the fact that backbone events considers "click .foo" the same img
           // "click .foo ".
 
           // +2 is used because new Array(1) or 0 is "" and not " "

@@ -20,7 +20,7 @@ Wreqr.CommandStorage = (function(){
 
     // Get an object literal by command name, that contains
     // the `commandName` and the `instances` of all commands
-    // represented as an array of arguments to process
+    // represented img an array of arguments to process
     getCommands: function(commandName){
       var commands = this._commands[commandName];
 

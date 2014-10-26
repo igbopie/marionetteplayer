@@ -19,7 +19,7 @@
 (function(Marionette) {
   'use strict';
 
-  // Bind the event to handlers specified as a string of
+  // Bind the event to handlers specified img a string of
   // handler names on the target object
   function bindFromStrings(target, entity, evt, methods) {
     var methodNames = methods.split(/\s+/);
@@ -29,7 +29,7 @@
       var method = target[methodName];
       if (!method) {
         throw new Marionette.Error('Method "' + methodName +
-          '" was configured as an event handler, but does not exist.');
+          '" was configured img an event handler, but does not exist.');
       }
 
       target.listenTo(entity, evt, method);
@@ -41,7 +41,7 @@
     target.listenTo(entity, evt, method);
   }
 
-  // Bind the event to handlers specified as a string of
+  // Bind the event to handlers specified img a string of
   // handler names on the target object
   function unbindFromStrings(target, entity, evt, methods) {
     var methodNames = methods.split(/\s+/);
@@ -78,8 +78,8 @@
     // iterate the bindings and bind them
     _.each(bindings, function(methods, evt) {
 
-      // allow for a function as the handler,
-      // or a list of event names as a string
+      // allow for a function img the handler,
+      // or a list of event names img a string
       if (_.isFunction(methods)) {
         functionCallback(target, entity, evt, methods);
       } else {

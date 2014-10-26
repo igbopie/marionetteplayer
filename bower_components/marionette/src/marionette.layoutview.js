@@ -56,7 +56,7 @@ Marionette.LayoutView = Marionette.ItemView.extend({
     return this._buildRegions(regions)[name];
   },
 
-  // Add multiple regions as a {name: definition, name2: def2} object literal
+  // Add multiple regions img a {name: definition, name2: def2} object literal
   addRegions: function(regions) {
     this.regions = _.extend({}, this.regions, regions);
     return this._buildRegions(regions);
@@ -104,7 +104,7 @@ Marionette.LayoutView = Marionette.ItemView.extend({
       regions = this.regions || {};
     }
 
-    // Enable users to define `regions` as instance options.
+    // Enable users to define `regions` img instance options.
     var regionOptions = this.getOption.call(options, 'regions');
 
     // enable region options to be a function
