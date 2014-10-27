@@ -19,6 +19,11 @@ Song = Backbone.Model.extend({
     },
     addVote: function(){
         this.set('votes', this.get('votes') + 1);
+    },
+    getSeconds: function(){
+        var length = this.get("length");
+        var lengthArray = length.split(":");
+        return Number(lengthArray[1])+Number(lengthArray[0])*60;
     }
 });
 
@@ -50,6 +55,12 @@ SongView = Backbone.Marionette.ItemView.extend({
     },
     modelEvents: {
         "change": "render"
+    },
+    events: {
+        'click': 'clickSong'
+    },
+    clickSong: function(){
+        this.trigger("clickSong");
     }
 });
 
@@ -116,9 +127,116 @@ SearchView = Backbone.Marionette.ItemView.extend({
 
 });
 
+/* ------------------------ PLAYER ----------------- */
+Player = Backbone.Model.extend({
+    defaults:{
+        elapsed:0,
+        elapsedPercent:0,
+        elapsedFormatted:"00:00",
+        status:0,
+        song: new Song({title:"No Song",image:"0.png"})
+    },
+    setElapsedSeconds: function(seconds){
+        this.set("elapsed",seconds);
+
+        var total = this.get("seconds");
+        var elapsed = this.get("elapsed");
+        var percent = elapsed /total *100;
+        this.set("elapsedPercent",percent);
+
+        var fSeconds = String(elapsed % 60);
+        while(fSeconds.length < 2){
+            fSeconds = "0"+fSeconds;
+        }
+
+        var fMinutes = String(Math.round(elapsed / 60));
+        while(fMinutes.length < 2){
+            fMinutes = "0"+fMinutes;
+        }
+
+        this.set("elapsedFormatted",fMinutes+":"+fSeconds);
+    },
+    incElapsedSeconds: function(){
+        this.setElapsedSeconds(this.get("elapsed")+1);
+    }
+});
+
+PlayerView = Backbone.Marionette.ItemView.extend({
+    template: "#player-template",
+    tagName: 'div',
+    className: 'player',
+    model: new Player(),
+    events: {
+        'click .pause': 'pause',
+        'click .play': 'resume',
+        'click .stop': 'stop'
+    },
+    pause: function(){
+
+        this.clearInterval();
+
+        this.model.set("status",0);
+        this.render();
+    },
+    resume: function(){
+        this.clearInterval();
+
+        this.model.set("status",1);
+        this.render();
+
+        this.startInterval();
+    },
+    stop: function(){
+        this.clearInterval();
+
+        this.model.set("status",0);
+        this.model.setElapsedSeconds(0);
+
+        this.render();
+    }
+    ,
+    play: function(song){
+        this.clearInterval();
+
+        var player = new Player();
+        player.set("song",song);
+        player.set("seconds",song.getSeconds());
+        player.set("status",1);
+
+        this.model = player;
+
+        this.render();
+
+        this.startInterval();
+    },
+    clearInterval:function(){
+        var interval = this.model.get("interval");
+        if(interval){
+            clearInterval(interval);
+        }
+    }
+    ,
+    startInterval:function(){
+        var view = this;
+        this.model.set("interval",setInterval(
+            function(){
+                view.secondElapsed();
+            }, 1000));
+    }
+    ,
+    secondElapsed:function(){
+        this.model.incElapsedSeconds();
+        this.render();
+    }
+
+});
+
 /* ------------------------ MAIN ----------------- */
 
 MyApp.addInitializer(function(options){
+    //PLAYER
+    var playerView = new PlayerView();
+    MyApp.playerRegion.show(playerView);
 
     //SONGS
     var songs = new Songs([]);
@@ -126,6 +244,11 @@ MyApp.addInitializer(function(options){
         collection: songs
     });
     MyApp.songsRegion.show(songsView);
+    songsView.on('childview:clickSong', function(event) {
+        console.log("Read clickSong");
+        var song = event.model;
+        playerView.play(song);
+    });
 
     //PLAYLIST
     var playlists = new Playlists();
@@ -162,6 +285,8 @@ MyApp.addInitializer(function(options){
 
 
     MyApp.searchRegion.show(searchView);
+
+
 });
 
 $(document).ready(function(){

@@ -4,55 +4,63 @@
         "length": "5:15",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     },
     {
         "title": "Morning Mr Magpie",
         "length": "4:41",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     },
     {
         "title": "Little by Little",
         "length": "4:27",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     },
     {
         "title": "Feral",
         "length": "3:13",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     },
     {
         "title": "Lotus Flower",
         "length": "5:01",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     },
     {
         "title": "Codex",
         "length": "4:47",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     },
     {
         "title": "Give Up the Ghost",
         "length": "4:50",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     },
     {
         "title": "Separator",
         "length": "5:20",
         "artist": "Radiohead",
         "album": "The King of Limbs",
-        "playlistId": 1
+        "playlistId": 1,
+        "image":"1.jpg"
     }
 ]
