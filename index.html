@@ -29,6 +29,7 @@
     </head>
     <body>
         <div class="container-fluid">
+            <br />
             <div class="row">
                 <div class="col-md-4"></div>
                 <div id="search" class="col-md-4">
@@ -37,11 +38,13 @@
                 <div class="col-md-4"></div>
 
             </div>
+            <br />
             <div class="row">
                 <div id="playlists" class="col-md-4">
                     Playlist
                 </div>
                 <div id="songs" class="col-md-8">
+                    Songs
                 </div>
             </div>
 
@@ -99,6 +102,11 @@
             <td><image class="playlist-image" src="img/<%= image  %>" /></td>
             <td><%= name %></td>
         </script>
+
+        <script type="text/template" id="search-template">
+            <input type="text" class="form-control input-lg search-input" placeholder="Search">
+        </script>
+
 
     </body>
 </html>

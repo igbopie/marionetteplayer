@@ -9,6 +9,7 @@ MyApp.addRegions({
     searchRegion: "#search",
     playerRegion: "#player"
 });
+
 /* ------------------------ SONGS ----------------- */
 /* MODEL */
 
@@ -22,7 +23,15 @@ Song = Backbone.Model.extend({
 });
 
 Songs = Backbone.Collection.extend({
-    model: Song
+    model: Song,
+    search: function(text) {
+        var filtered = this.filter(function (song) {
+            if (!song) return false;
+            return song.get("title").toLowerCase().indexOf(text.toLowerCase()) > -1;
+        });
+
+        return new Songs(filtered);
+    }
 });
 
 
@@ -61,6 +70,7 @@ Playlist = Backbone.Model.extend({
 });
 
 Playlists = Backbone.Collection.extend({
+    url:"json/playlist.json",
     model: Playlist
 });
 
@@ -90,67 +100,70 @@ PlaylistsView = Backbone.Marionette.CompositeView.extend({
     childViewContainer:"tbody"
 });
 
+/* ------------------------ SEARCH ----------------- */
 
+SearchView = Backbone.Marionette.ItemView.extend({
+    template: "#search-template",
+    tagName: 'div',
+    className: 'search',
+    events: {
+        'keyup .search-input': 'keyInput'
+    },
+    keyInput: function(event){
+        var textInput = $(event.target).val();
+        this.trigger("newSearch", textInput);
+    }
 
+});
 
-
-
-/* MAIN */
+/* ------------------------ MAIN ----------------- */
 
 MyApp.addInitializer(function(options){
+
+    //SONGS
+    var songs = new Songs([]);
     var songsView = new SongsView({
-        collection: options.songs
+        collection: songs
     });
     MyApp.songsRegion.show(songsView);
 
+    //PLAYLIST
+    var playlists = new Playlists();
+
+    playlists.fetch();
+
     var playlistsView = new PlaylistsView({
-        collection: options.playlists
+        collection: playlists
     });
 
     playlistsView.on('childview:clickPlaylist', function(event){
-        //console.log();
         console.log("Read clickPlaylist");
         var playlistId = event.model.get("id");
-        $.ajax({
-            url: "json/playlist/" + playlistId + "/songs.json",
-            success: function (songsData) {
-                var songs = new Songs(songsData);
-                songsView.collection = songs;
-                songsView.render();
-                console.log("refresh");
-            }
-        });
 
+        songs.url="json/playlist/" + playlistId + "/songs.json";
+        songs.fetch();
+
+        songsView.collection = songs;
     });
 
     MyApp.playlistRegion.show(playlistsView);
 
+    //SEARCH
+    var searchView = new SearchView();
 
+    searchView.on('newSearch', function(text) {
+
+        songs.url = "json/songs.json";
+        songs.fetch().done(function() {
+            songsView.collection = songs.search(text);
+            songsView.render();
+        });
+    });
+
+
+    MyApp.searchRegion.show(searchView);
 });
 
 $(document).ready(function(){
-
-    console.log("READY!");
-    $.ajax({
-        url:"json/playlist/1/songs.json",
-        success:function(songsData){
-            var songs = new Songs(songsData);
-            $.ajax({
-                    url: "json/playlist.json",
-                    success: function (playlistData) {
-                        var playlists = new Playlists(playlistData);
-                        MyApp.start(
-                            {
-                                songs: songs,
-                                playlists: playlists
-                            }
-                        );
-                    }
-            });
-        },
-        error:function( jqXHR, textStatus, errorThrown){
-            alert("Error: "+textStatus+" "+errorThrown);
-            console.log(jqXHR);
-        }
-    });
+    MyApp.start();
 });
